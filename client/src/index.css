@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@700&display=swap');
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    @apply bg-slate-50 text-slate-900 font-sans transition-colors duration-200;
+  }
+
+  body.dark {
+    @apply bg-gaming-black text-slate-100;
+    background-image: radial-gradient(circle at top right, rgba(124, 58, 237, 0.1), transparent),
+                      radial-gradient(circle at bottom left, rgba(244, 63, 94, 0.05), transparent);
+  }
+}
+
+@layer components {
+  /* Glassmorphism Card */
+  .app-card {
+    @apply bg-white dark:bg-gaming-dark/60 border border-slate-200 dark:border-gaming-border/40 rounded-2xl p-5 shadow-minimal dark:shadow-glass backdrop-blur-md transition-all duration-300;
+  }
+
+  .app-card:hover {
+    @apply dark:border-brand-primary/60 dark:shadow-neon-purple;
+  }
+
+  /* Neon Button */
+  .app-button {
+    @apply bg-brand-primary hover:bg-brand-secondary text-white font-bold px-6 py-2.5 rounded-xl shadow-lg hover:shadow-neon-purple transition-all duration-300 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none;
+  }
+
+  .app-button-secondary {
+    @apply bg-transparent border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white px-6 py-2 rounded-xl transition-all duration-300;
+  }
+
+  /* Minimal Input */
+  .app-input {
+    @apply bg-white dark:bg-gaming-muted/50 border border-slate-200 dark:border-gaming-border/30 text-slate-900 dark:text-slate-100 px-4 py-2.5 rounded-xl outline-none focus:ring-2 focus:ring-brand-primary/30 focus:border-brand-primary transition-all duration-300;
+  }
+
+  /* Navigation Link */
+  .nav-link {
+    @apply px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-brand-primary dark:hover:text-brand-primary hover:bg-brand-primary/5 transition-all duration-300;
+  }
+  
+  .nav-link.active {
+    @apply text-brand-primary dark:text-brand-primary bg-brand-primary/10 shadow-sm;
+  }
+
+  /* Typography */
+  .heading-display {
+    @apply font-display tracking-wider uppercase;
+  }
+
+  /* Старые классы для обратной совместимости */
+  .metro-card { 
+    @apply bg-white dark:bg-gaming-dark/60 border border-slate-200 dark:border-gaming-border/40 rounded-2xl p-5 shadow-minimal dark:shadow-glass backdrop-blur-md transition-all duration-300;
+  }
+  .metro-button { 
+    @apply bg-brand-primary hover:bg-brand-secondary text-white font-bold px-6 py-2.5 rounded-xl shadow-lg hover:shadow-neon-purple transition-all duration-300 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-none;
+  }
+  .metro-input { 
+    @apply bg-white dark:bg-gaming-muted/50 border border-slate-200 dark:border-gaming-border/30 text-slate-900 dark:text-slate-100 px-4 py-2.5 rounded-xl outline-none focus:ring-2 focus:ring-brand-primary/30 focus:border-brand-primary transition-all duration-300;
+  }
+  .metro-nav-button { 
+    @apply px-4 py-2 rounded-xl text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-brand-primary dark:hover:text-brand-primary hover:bg-brand-primary/5 transition-all duration-300;
+  }
+  .metro-nav-button.active { 
+    @apply text-brand-primary dark:text-brand-primary bg-brand-primary/10 shadow-sm;
+  }
+}
