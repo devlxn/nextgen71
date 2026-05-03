@@ -25,7 +25,7 @@ interface User {
   avatar: string;
 }
 
-const API_URL = "http://localhost:5000";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
 function ProtectedRoute({ children }: { children: JSX.Element }) {
   const [user, setUser] = useState<User | null>(null);
