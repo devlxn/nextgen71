@@ -140,7 +140,7 @@ app.get(
   "/auth/steam/return",
   passport.authenticate("steam", { failureRedirect: "http://localhost:5173/profile" }),
   (req, res) => {
-    res.redirect("http://localhost:5173/profile");
+    res.redirect(`${CLIENT_URL}/profile`);
   }
 );
 
@@ -150,7 +150,7 @@ app.get("/api/user", (req, res) => {
 
 app.get("/api/logout", (req, res) => {
   req.logout(() => {
-    res.redirect("http://localhost:5173/profile");
+    res.redirect(`${CLIENT_URL}/profile`);
   });
 });
 
