@@ -9,7 +9,7 @@ interface League {
   tier: string;
   banner?: string;
 }
-
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 function Leagues() {
   const [leagues, setLeagues] = useState<League[]>([]);
   const [loading, setLoading] = useState(true);
@@ -22,7 +22,7 @@ function Leagues() {
   const fetchLeagues = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:5000/api/leagues", {
+      const response = await axios.get(`${API_URL}/api/leagues`, {
         params: {
           page: currentPage,
           limit: 21,
