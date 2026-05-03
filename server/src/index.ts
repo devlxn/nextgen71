@@ -63,7 +63,7 @@ const port = process.env.PORT || 5000;
 // Middleware
 app.use(
   cors({
-    origin: ["https://dotaw-tracker.vercel.app", "http://localhost:5173"],
+    origin: [CLIENT_URL, "http://localhost:5173"],
     credentials: true,
     methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
