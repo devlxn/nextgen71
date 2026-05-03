@@ -158,7 +158,7 @@ function Matches() {
                     <div className="relative shrink-0">
                       <div className={`absolute -inset-1 rounded-xl blur opacity-20 group-hover:opacity-40 transition-opacity ${isWin ? 'bg-brand-success' : 'bg-brand-danger'}`}></div>
                       <img
-                        src={`https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/${heroName}.png`}
+                        src={`/images/${hero.name.replace("npc_dota_hero_", "")}_full.png`}
                         alt={hero?.localized_name}
                         className="relative w-24 h-14 rounded-lg object-cover border border-slate-200 dark:border-white/10"
                         onError={(e) => {
