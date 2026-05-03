@@ -22,7 +22,7 @@ declare module "express-session" {
 }
 
 dotenv.config();
-
+const CLIENT_URL = process.env.CLIENT_URL || "http://localhost:5173";
 // Настройка Redis
 const redisClient = createClient({
   url: process.env.REDIS_URL || "redis://127.0.0.1:6379"
