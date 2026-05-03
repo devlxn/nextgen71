@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
-
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 interface League {
   leagueid: number;
   name: string;
@@ -41,10 +41,10 @@ function LeagueDetails() {
       setLoading(true);
       try {
         const [leagueRes, matchesRes, teamsRes] = await Promise.all([
-          axios.get(`http://localhost:5000/api/leagues/${leagueId}`),
-          axios.get(`http://localhost:5000/api/leagues/${leagueId}/matches`),
-          axios.get(`http://localhost:5000/api/leagues/${leagueId}/teams`)
-        ]);
+  axios.get(`${API_URL}/api/leagues/${leagueId}`),
+  axios.get(`${API_URL}/api/leagues/${leagueId}/matches`),
+  axios.get(`${API_URL}/api/leagues/${leagueId}/teams`)
+]);
         setLeague(leagueRes.data);
         setMatches(matchesRes.data);
         setTeams(teamsRes.data);
